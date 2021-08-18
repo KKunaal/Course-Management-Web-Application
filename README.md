@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Course-Management-Web-Application
-=======
 # Designing and implementing a complete web app using MEAN stack
 Student-Course Management System developed with an Express RESTful API as back-end,  MongoDB for storage and Angular as the Front-End.
 
@@ -19,4 +16,3 @@ This application is currently configured to use the comp308-w2018 db on the loca
 Note: Initially an administrator account will be created with credentials (1:password)
 
 You will need to create your own students and courses to test the app
->>>>>>> master
