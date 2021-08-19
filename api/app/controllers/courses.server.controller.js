@@ -1,11 +1,3 @@
-/**
- * 
- * @file        courses.server.controller.js
- * @description this controller handles the CRUD operations for a Course Entity
- * @author      Kevin Ma, Vinood Persad
- * @date        2018.03.21
- * 
- */
 const mongoose = require('mongoose');
 
 // student object created from the Schema / model
@@ -116,7 +108,6 @@ module.exports.UpdateCourse = function (req, res, next) {
     })
 }
 
-// 2018.04.01 - 16:02:32
 module.exports.GetEnrolledCourses = function (req, res, next) {
     const studentId = req.params.studentId;
 

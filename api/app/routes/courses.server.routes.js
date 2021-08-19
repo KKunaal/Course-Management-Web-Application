@@ -1,11 +1,3 @@
-/**
- * 
- * @file        courses.server.routes.js
- * @description defines the routes for the courses entity
- * @author      Kevin Ma, Vinood Persad
- * @date        2018.03.21
- * 
- */
 
 const express = require('express');
 const router = express.Router();
@@ -25,15 +17,15 @@ router.route('/:id')
     .put((req, res, next) => coursesController.UpdateCourse(req, res, next))
     .delete((req, res, next) => coursesController.DeleteCourse(req, res, next));
 
-// 2018.04.01 - 16:45:53
+
 router.route('/getAvailable/:studentId')
     .get((req, res, next) => coursesController.GetAvailableCourses(req, res, next));
 
-// 2018.04.01 - 16:13:02
+
 router.route('/getEnrolled/:studentId')
     .get((req, res, next) => coursesController.GetEnrolledCourses(req, res, next));
 
-// 2018.04.03 - 18:10:49
+
 router.route('/getNotEnrolledStudents/:courseId')
     .get((req, res, next) => coursesController.GetNotEnrolledStudents(req, res, next));
 

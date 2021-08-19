@@ -41,7 +41,7 @@ export class CreateComponent {
           { queryParams: { 'id': createdStudent._id } }
         );
       },
-        // 2018.03.30 - 11:49:19 - add alert service
+        // add alert service
         error => this._alertService.error(error));
   }
 }

@@ -15,6 +15,7 @@ import { UpdateComponent } from './update/update.component';
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
     routing
   ],
   declarations: [CreateComponent, StudentsComponent, ListComponent, DetailsComponent, UpdateComponent],

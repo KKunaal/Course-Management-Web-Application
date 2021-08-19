@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { AuthenticationService } from './authentication.service';
 import { AlertService } from '../alert/alert.service';
 
-// 2018.03.28 - 17:57:03 - created
+// created
 @Injectable()
 export class AuthGuard implements CanActivate {
 

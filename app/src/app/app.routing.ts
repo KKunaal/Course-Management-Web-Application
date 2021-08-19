@@ -15,7 +15,7 @@ import { PersonalGuard } from './authentication/personal.guard';
 import { CourseDetailComponent } from './courses/details/coursedetail.component';
 import { UpdateCourseComponent } from './courses/update-course/update-course.component';
 
-// 2018.03.30 - 12:34:17 - created app.routing for all routes in application
+//  created app.routing for all routes in application
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -29,7 +29,7 @@ const appRoutes: Routes = [
             { path: '', component: ListComponent },
             // only admins can create new students
             { path: 'create', component: CreateComponent, canActivate: [RoleGuard] },
-            // 2018.03.31 - 16:53:36 - students can only edit THEIR OWN profiles
+            // students can only edit THEIR OWN profiles
             { path: 'update', component: UpdateComponent, canActivate: [PersonalGuard] },
             { path: 'details', component: DetailsComponent },
         ],

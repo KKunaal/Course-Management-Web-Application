@@ -3,7 +3,6 @@ import { Router, NavigationStart } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
-// 2018.03.28 - 17:41:56 - created
 /**
  * This service enables any component in the application to display alert msgs at
  * the top of the page via the alert component.

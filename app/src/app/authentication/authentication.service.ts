@@ -38,7 +38,6 @@ export class AuthenticationService {
       .catch(this._handleError);
   }
 
-  // 2018.03.28 - 22:03:42
   logout() {
     // remove student from session storage to log user out
     sessionStorage.removeItem('currentStudent');

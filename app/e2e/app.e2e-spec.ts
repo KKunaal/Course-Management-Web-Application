@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('kevin-ma-vinood-persad-comp308-lab3-app App', () => {
+describe('App', () => {
   let page: AppPage;
 
   beforeEach(() => {

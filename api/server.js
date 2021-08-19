@@ -2,8 +2,7 @@
  * 
  * @file        server.js
  * @description application manifest
- * @author      Kevin Ma, Vinood Persad
- * @date        2018.03.21
+ * @author      Kunal Ghanghav
  * 
  */
 
@@ -14,7 +13,8 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 const config = require('./config/config');
 const db = require('./config/mongoose');
 const app = require('./config/express');
-// 2018.03.27 - 00:15:29 added Passport
+
+// added Passport
 const passport = require('./config/passport');
 
 app.listen(config.port);

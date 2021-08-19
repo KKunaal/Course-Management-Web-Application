@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Credentials } from '../interfaces/credentials';
 import { AlertService } from '../alert/alert.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
     private _router: Router,
     private _route: ActivatedRoute) { }
 
-  // 2018.03.29 - 19:41:31 - user auto logged out upon visiting /login page
+  // user auto logged out upon visiting /login page
   // so login page can be used to logout
   ngOnInit() {
     // reset login status

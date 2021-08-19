@@ -1,12 +1,3 @@
-/**
- * 
- * @file        mongoose.js
- * @description this file configures mongoose and registers our different models
- * @author      Kunal Ghanghav
- * @date        2021.07.21
- * 
- */
-
 const config = require("./config");
 const mongoose = require("mongoose");
 

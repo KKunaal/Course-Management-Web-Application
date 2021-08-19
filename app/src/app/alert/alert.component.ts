@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertService } from './alert.service';
 
-// 2018.03.28 - 17:56:41 - created
+//  created
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.component.html',

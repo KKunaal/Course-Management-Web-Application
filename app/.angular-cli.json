@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "kevin-ma-vinood-persad-comp308-lab3-app"
+    "name": "Course-Management-Web-appplication"
   },
   "apps": [
     {

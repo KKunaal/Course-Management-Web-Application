@@ -52,7 +52,7 @@ export class CourseDetailComponent implements OnInit {
 
   // invoked by students to add themselves to THIS course
   // enrollInCourse() {
-  // 2018.04.04 - 14:50:08 - since I couldn't declare two enrollInCourse methods with overloadding...
+  //  since I couldn't declare two enrollInCourse methods with overloadding...
   // optional studentId arg - when called by admin
   enrollInCourse(studentId?: String, studentNumber?: Number) {
     this._studentsService
