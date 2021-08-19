@@ -2,22 +2,26 @@
  * 
  * @file        mongoose.js
  * @description this file configures mongoose and registers our different models
- * @author      Kevin Ma, Vinood Persad
- * @date        2018.03.21
+ * @author      Kunal Ghanghav
+ * @date        2021.07.21
  * 
  */
 
 const config = require("./config");
 const mongoose = require("mongoose");
 
-mongoose.connect(config.db);
+mongoose.connect(config.db,{
+ useNewUrlParser: true,
+ useUnifiedTopology: true 
+});
 const mongoDB = mongoose.connection;
-// 2018.03.27 - 02:14:22 - adding the default admin user when API first starts
+
+// adding the default admin user when API first starts
 const Student = require('../app/models/students.server.model');
 
 mongoDB.on('error', console.error.bind(console, 'connection error:'));
 mongoDB.once('open', () => {
-    // 2018.03.27 - 02:16:35 - instead of using findOneAndUpdate, switched to findOne then save because findoneandupdate with upsert:true was not triggering the pre middleware
+    // instead of using findOneAndUpdate, switched to findOne then save because findoneandupdate with upsert:true was not triggering the pre middleware
     if (Student.findOne({ studentNumber: 1 },
         // callback
         (err, res) => {
@@ -28,7 +32,7 @@ mongoDB.once('open', () => {
                     firstName: 'admin',
                     lastName: 'user',
                     role: 'admin',
-                    // 2018.03.27 - 08:03:12 - provider is mandatory for passport
+                    //  provider is mandatory for passport
                     provider: 'local'
                 })
 

@@ -28,6 +28,7 @@ import { PersonalGuard } from './authentication/personal.guard';
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule,
     StudentsModule,
     CoursesModule,
     routing

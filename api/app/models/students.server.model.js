@@ -1,14 +1,5 @@
-/**
- * 
- * @file        students.server.model.js
- * @description this model describes student information (student number, password, first name, last name, address, city, phone number, email, program)
- * @author      Kevin Ma, Vinood Persad
- * @date        2018.03.21
- * 
- */
-
 const mongoose = require('mongoose');
-// 2018.03.27 - 00:31:56 - adapting student model for passport-local
+//adapting student model for passport-local
 const crypto = require('crypto');
 
 // create a model class
@@ -64,7 +55,6 @@ const studentsSchema = mongoose.Schema({
     ]
 });
 
-// 2018.03.27 - 00:40:30
 // pre-save middleware to handle the hashing of your students' passwords
 studentsSchema.pre('save', function (next) {
     if (this.password) {

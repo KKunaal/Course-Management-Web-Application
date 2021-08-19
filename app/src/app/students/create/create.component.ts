@@ -26,17 +26,17 @@ export class CreateComponent {
   };
   constructor(private _router: Router,
     private _studentsService: StudentsService,
-    // 2018.03.30 - 11:48:52 - add alert service
+    //  add alert service
     private _alertService: AlertService) { }
 
   create() {
     this._studentsService
       .create(this.student)
       .subscribe(createdStudent => {
-        // 2018.03.30 - 11:50:04 - add alert service
+        //  add alert service
         // keep showing the alert even after redirected to /student/details/:id
         this._alertService.success(`Student (#${createdStudent.studentNumber}) successfully created`, true);
-        // 2018.03.27 - 09:31:28 - updated route
+        // updated route
         this._router.navigate(['/students/details'],
           { queryParams: { 'id': createdStudent._id } }
         );

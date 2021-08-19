@@ -1,4 +1,3 @@
-// 2018.03.27 - 00:31:09
 const passport = require('passport');
 const mongoost = require('mongoose');
 // handling student serialization

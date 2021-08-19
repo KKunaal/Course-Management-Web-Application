@@ -1,11 +1,3 @@
-/**
- * 
- * @file        students.server.controller.js
- * @description this controller handles the CRUD operations for a Student Model
- * @author      Kevin Ma, Vinood Persad
- * @date        2018.03.21
- * 
- */
 const mongoose = require('mongoose');
 
 // student object created from the Schema / model
@@ -39,7 +31,7 @@ module.exports.GetStudents = function (req, res, next) {
             // don't show the existence of admin user to public!
             studentNumber: { $ne: 1 }
         },
-        // 2018.03.27 - 09:56:39 - dont show password or salt!
+        // dont show password or salt!
         '-password -salt',
         (err, students) => {
             if (err) {
@@ -69,7 +61,7 @@ module.exports.GetStudentDetails = function (req, res, next) {
 // Update student
 module.exports.UpdateStudent = function (req, res, next) {
 
-    // 2018.03.31 - 18:46:18 - middleware doesnt work for updates, and can't use middlware for presave since server thinks we are creating duplicate student with same studentNumber
+    //  middleware doesnt work for updates, and can't use middlware for presave since server thinks we are creating duplicate student with same studentNumber
     let id = req.params.id;
 
     let updatedStudent = new Student(req.body);
@@ -90,8 +82,8 @@ module.exports.UpdateStudent = function (req, res, next) {
     });
 }
 
-// 2018.04.04 - 16:35:36 - before deleting, removes reference from every course to this student
-// 2018.03.31 - 21:16:58 - Delete student
+//  before deleting, removes reference from every course to this student
+//  Delete student
 module.exports.DeleteStudent = function (req, res, next) {
     const studentId = req.params.id;
 
@@ -102,9 +94,9 @@ module.exports.DeleteStudent = function (req, res, next) {
                     message: getErrorMessage(err)
                 });
             } else {
-                // 2018.04.04 - 16:44:32 - find all courses this student is taking
+                //  find all courses this student is taking
                 student.courses.forEach(courseId => {
-                    // 2018.04.04 - 16:46:51 - drop student from each of these courses
+                    //  drop student from each of these courses
                     Course.findByIdAndUpdate(courseId,
                         { $pull: { students: studentId } },
                         { new: true },
@@ -205,18 +197,7 @@ module.exports.DropCourse = function (req, res, next) {
     );
 };
 
-// enroll in a course
-
-// AUTHENTICATION ===========================================================
-// create will take care of registration/signup
-// 2018.03.28 - 22:07:07 - don't need this...logout taken care of in ng app
-// module.exports.Logout = function (req, res, next) {
-//     // invalidate the authenticated session using a Passport method
-//     req.logout();
-// }
-
 module.exports.Login = function (req, res, next) {
-    // 2018.03.27 - 10:18:56
     passport.authenticate('local', (err, student, info) => {
         // res.send(JSON.stringify(info)).status(200)
 
