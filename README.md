@@ -1,4 +1,4 @@
-# Designing and implementing a complete web app using MEAN stack
+# Course Management web application using MEAN stack
 Student-Course Management System developed with an Express RESTful API as back-end,  MongoDB for storage and Angular as the Front-End.
 
 This application is currently configured to use the comp308-w2018 db on the local MongoDB instance.
